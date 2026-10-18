@@ -1,7 +1,5 @@
 # Splunk SOC Lab: From Raw Logs to Security Intelligence
 
-**Splunk Enterprise · Windows Security Logs · SPL · Firewall Analysis · SOC Monitoring**
-
 ## Project overview
 This project demonstrates hands-on Splunk experience in data ingestion, custom field extraction, SPL statistical analysis, and dashboard visualization to analyze Windows Security logs, monitor firewall activity, and strengthen SOC threat detection capabilities.
 ## 1. Data Ingestion Pipeline
@@ -58,8 +56,6 @@ Windows Security Telemetry
  Investigation and Context
 ```
 
-<img width="1638" height="1128" alt="firewall-analysis-redacted" src="https://github.com/user-attachments/assets/3ca456f8-dd3e-4cd1-8367-4910e2397f51" />
-<img width="1638" height="1128" alt="firewall-analysis-redacted" src="https://github.com/user-attachments/assets/99c7cbf7-7b94-4cf6-8521-2affe02cc3b7" />
 
 ## Key takeaways
 
