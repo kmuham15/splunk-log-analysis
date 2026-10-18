@@ -5,17 +5,17 @@ This project demonstrates my hands-on SOC investigation skills using Splunk Ente
 
 ## Tools and Technologies 
 
-Tools and Technologies
-Splunk Enterprise
-Splunk Search & Reporting
-Splunk SPL
-Windows Security Event Logs
-Windows Firewall Logs
-Microsoft 365 / Azure AD Sign-In Logs
-OneDrive and SharePoint Logs
-Boss of the SOC Version 3 (BOTSv3)
-Splunk Reports
-Splunk Dashboards
+- Tools and Technologies
+- Splunk Enterprise
+- Splunk Search & Reporting
+- Splunk SPL
+- Windows Security Event Logs
+- Windows Firewall Logs
+- Microsoft 365 / Azure AD Sign-In Logs
+- OneDrive and SharePoint Logs
+- Boss of the SOC Version 3 (BOTSv3)
+- Splunk Reports
+- Splunk Dashboards
 
 ## 1. Data Ingestion Pipeline
 
