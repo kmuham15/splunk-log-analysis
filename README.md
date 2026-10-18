@@ -6,7 +6,7 @@ This project demonstrates hands-on Splunk experience in data ingestion, custom f
 
 I explored indexed Windows Security events using Splunk search and examined the available event telemetry. The screenshot shows **118,078 events** returned within the selected time range. This represents the search result volume, not the number of security incidents.
 
-![Data ingestion and event discovery]<img width="1602" height="982" alt="Redacted Splunk Search Dashboard" src="https://github.com/user-attachments/assets/461a7359-a601-49d7-88d1-cf78ff26de41" />
+<img width="1602" height="982" alt="Redacted Splunk Search Dashboard" src="https://github.com/user-attachments/assets/461a7359-a601-49d7-88d1-cf78ff26de41" />
 
 
 ## 2. Custom Field Extractions
@@ -32,9 +32,9 @@ I built a **Firewall Analysis** dashboard featuring a pie chart comparing allowe
 
 <img width="1638" height="1128" alt="firewall-analysis-redacted" src="https://github.com/user-attachments/assets/87d848f6-5f85-4827-9003-4602908ab708" />
 
+Security Intelligence
 
-
-## Security operations workflow
+## Security Investigation - Bots V3
 
 ```text
 Windows Security Telemetry
