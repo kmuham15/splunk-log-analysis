@@ -1,0 +1,4 @@
+index=* sourcetype="WinEventLog:Security"
+| where isnotnull(Source_Address)
+| stats count by Source_Address
+| sort - count

@@ -1,2 +1,119 @@
-# splunk-log-analysis
-Splunk analysis
+# Splunk SOC Lab: From Raw Logs to Security Intelligence
+
+**Splunk Enterprise · Windows Security Logs · SPL · Firewall Analysis · SOC Monitoring**
+
+## Project overview
+
+This project showcases my hands-on Splunk course work across four areas: **Data Ingestion Pipeline**, **Custom Field Extractions**, **Statistical Analysis via SPL**, and **Dashboard Design & Visualization**.
+
+I worked with Windows Security telemetry and firewall-related events in Splunk, inspected network-relevant fields, practiced statistical queries, and built a firewall monitoring dashboard. My goal was to strengthen the practical workflow a SOC analyst uses to transform raw event data into useful security visibility.
+
+**Core workflow:** Ingest → Inspect fields → Search and aggregate → Visualize → Investigate.
+
+## 1. Data Ingestion Pipeline
+
+I explored indexed Windows Security events using Splunk search and examined the available event telemetry. The screenshot shows **118,078 events** returned within the selected time range. This represents the search result volume, not the number of security incidents.
+
+![Data ingestion and event discovery](screenshots/01-data-ingestion-pipeline.png)
+
+[Chapter documentation](chapters/01-data-ingestion-pipeline.md)
+
+## 2. Custom Field Extractions
+
+I investigated the fields available in firewall-related Windows Security events, including `Source_Address`, `Destination_Address`, `Source_Port`, `Destination_Port`, and `EventCode`. Field discovery makes it possible to filter logs and build more useful searches.
+
+![Field discovery and allowed firewall traffic](screenshots/02-custom-field-extractions.png)
+
+The screenshot demonstrates extracted fields in the search interface; it does not independently prove that a custom extraction configuration was saved.
+
+[Chapter documentation](chapters/02-custom-field-extractions.md)
+
+## 3. Statistical Analysis via SPL
+
+I practiced using SPL to summarize security events and identify activity patterns. Example searches included in the repository demonstrate `stats count`, grouping, sorting, and time-based summaries.
+
+```spl
+index=* sourcetype="WinEventLog:Security"
+| stats count by EventCode
+| sort - count
+```
+
+These are reproducible query examples, not fabricated investigation results. Queries may require changes based on your Splunk index, sourcetype, and field mappings.
+
+[Chapter documentation](chapters/03-statistical-analysis-via-spl.md) · [SPL query library](queries/)
+
+## 4. Dashboard Design & Visualization
+
+I built a **Firewall Analysis** dashboard featuring a pie chart comparing allowed and blocked firewall activity, together with an event table displaying network fields and traffic direction. This brings event-level investigation and overall activity patterns into one view.
+
+![Firewall analysis dashboard](screenshots/04-dashboard-design.png)
+
+[Chapter documentation](chapters/04-dashboard-design-visualization.md)
+
+## Security operations workflow
+
+```text
+Windows Security Telemetry
+          ↓
+      Splunk Index
+          ↓
+  Field Review / Extraction
+          ↓
+      SPL Analysis
+          ↓
+  Statistical Summaries
+          ↓
+  Dashboard Visualization
+          ↓
+ Investigation and Context
+```
+
+## Skills demonstrated
+
+| Category | Practical skills |
+|---|---|
+| SIEM | Splunk Enterprise, event searching, indexed telemetry |
+| Data handling | Windows Security events, network fields, field discovery |
+| SPL | `stats count`, `sort`, `table`, `timechart`, conditional categorization |
+| Visualization | Firewall traffic pie chart and detailed event table |
+| SOC | Network activity review, triage context, investigative prioritization |
+
+## Key takeaways
+
+- Ingested and searchable logs are the foundation of useful security monitoring.
+- Source and destination information gives analysts essential network context.
+- Statistical queries help turn high-volume telemetry into understandable patterns.
+- Dashboards communicate trends efficiently while retaining event-level detail.
+- A high event count or unusual pattern is an investigative lead, **not automatic evidence of an attack**.
+
+## Repository contents
+
+```text
+Splunk-SOC-Security-Analytics/
+├── README.md
+├── chapters/
+│   ├── 01-data-ingestion-pipeline.md
+│   ├── 02-custom-field-extractions.md
+│   ├── 03-statistical-analysis-via-spl.md
+│   └── 04-dashboard-design-visualization.md
+├── queries/
+│   ├── 01-event-volume.spl
+│   ├── 02-firewall-event-fields.spl
+│   ├── 03-top-source-addresses.spl
+│   ├── 04-firewall-traffic-distribution.spl
+│   └── 05-hourly-activity.spl
+└── screenshots/
+    ├── 01-data-ingestion-pipeline.png
+    ├── 02-custom-field-extractions.png
+    └── 04-dashboard-design.png
+```
+
+## About the author
+
+I am a cybersecurity professional and project manager building hands-on skills in **SOC operations, SIEM monitoring, incident response, network security, and cloud security**. This project documents my technical growth through practical Splunk investigation and visualization exercises.
+
+## Privacy and evidence notes
+
+The included screenshots are based on my actual Splunk course environment. Visible computer-name and application-path areas have been blurred before publication. Loopback IP addresses such as `127.0.0.1` are retained because they do not identify a publicly reachable host. I recommend reviewing the final images before publishing additional environment details.
+
+**Educational portfolio project.** No real-world compromise or confirmed malicious incident is claimed.

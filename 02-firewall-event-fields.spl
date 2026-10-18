@@ -1,0 +1,2 @@
+index=* sourcetype="WinEventLog:Security" (EventCode=5156 OR EventCode=5157 OR EventCode=5158 OR EventCode=5159)
+| table _time EventCode Source_Address Source_Port Destination_Address Destination_Port Direction Application_Name

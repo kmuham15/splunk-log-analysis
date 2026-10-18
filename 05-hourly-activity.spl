@@ -1,0 +1,2 @@
+index=* sourcetype="WinEventLog:Security" (EventCode=5156 OR EventCode=5157 OR EventCode=5158 OR EventCode=5159)
+| timechart span=1h count by EventCode
