@@ -1,7 +1,8 @@
 # Splunk Security Monitoring & BOTSv3 Investigation
 
 ## Project overview
-This project demonstrates hands-on Splunk experience in data ingestion, custom field extraction, SPL statistical analysis, and dashboard visualization to analyze Windows Security logs, monitor firewall activity, and strengthen SOC threat detection capabilities.
+This project demonstrates my hands-on SOC investigation skills using Splunk Enterprise and the BOTSv3 security dataset. I leveraged SPL (Search Processing Language) to analyze Windows, firewall, endpoint, Microsoft 365, and authentication logs, identify suspicious activity, reconstruct attack timelines, and develop security dashboards to strengthen threat detection and incident response capabilities.
+
 ## 1. Data Ingestion Pipeline
 
 I explored indexed Windows Security events using Splunk search and examined the available event telemetry. The screenshot shows **118,078 events** returned within the selected time range. This represents the search result volume, not the number of security incidents.
