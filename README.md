@@ -11,17 +11,12 @@ I explored indexed Windows Security events using Splunk search and examined the 
 ![Data ingestion and event discovery]<img width="1602" height="982" alt="Redacted Splunk Search Dashboard" src="https://github.com/user-attachments/assets/461a7359-a601-49d7-88d1-cf78ff26de41" />
 
 
-[Chapter documentation](chapters/01-data-ingestion-pipeline.md)
-
 ## 2. Custom Field Extractions
 
-I investigated the fields available in firewall-related Windows Security events, including `Source_Address`, `Destination_Address`, `Source_Port`, `Destination_Port`, and `EventCode`. Field discovery makes it possible to filter logs and build more useful searches.
+I investigated the fields available in firewall-related Windows Security events, including `Source_Address`, `Destination_Address`, `Source_Port`, `Destination_Port`, and `EventCode`. The screenshot demonstrates extracted fields in the search interface; it does not independently prove that a custom extraction configuration was saved.
 
-![Field discovery and allowed firewall traffic](screenshots/02-custom-field-extractions.png)
+<img width="1599" height="984" alt="Redacted Firewall Traffic Dashboard" src="https://github.com/user-attachments/assets/33872368-65f0-488f-bf70-1f3010178d08" />
 
-The screenshot demonstrates extracted fields in the search interface; it does not independently prove that a custom extraction configuration was saved.
-
-[Chapter documentation](chapters/02-custom-field-extractions.md)
 
 ## 3. Statistical Analysis via SPL
 
@@ -41,9 +36,9 @@ These are reproducible query examples, not fabricated investigation results. Que
 
 I built a **Firewall Analysis** dashboard featuring a pie chart comparing allowed and blocked firewall activity, together with an event table displaying network fields and traffic direction. This brings event-level investigation and overall activity patterns into one view.
 
-![Firewall analysis dashboard](screenshots/04-dashboard-design.png)
+<img width="1638" height="1128" alt="firewall-analysis-redacted" src="https://github.com/user-attachments/assets/87d848f6-5f85-4827-9003-4602908ab708" />
 
-[Chapter documentation](chapters/04-dashboard-design-visualization.md)
+
 
 ## Security operations workflow
 
@@ -63,15 +58,8 @@ Windows Security Telemetry
  Investigation and Context
 ```
 
-## Skills demonstrated
-
-| Category | Practical skills |
-|---|---|
-| SIEM | Splunk Enterprise, event searching, indexed telemetry |
-| Data handling | Windows Security events, network fields, field discovery |
-| SPL | `stats count`, `sort`, `table`, `timechart`, conditional categorization |
-| Visualization | Firewall traffic pie chart and detailed event table |
-| SOC | Network activity review, triage context, investigative prioritization |
+<img width="1638" height="1128" alt="firewall-analysis-redacted" src="https://github.com/user-attachments/assets/3ca456f8-dd3e-4cd1-8367-4910e2397f51" />
+<img width="1638" height="1128" alt="firewall-analysis-redacted" src="https://github.com/user-attachments/assets/99c7cbf7-7b94-4cf6-8521-2affe02cc3b7" />
 
 ## Key takeaways
 
