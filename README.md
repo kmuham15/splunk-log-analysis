@@ -3,13 +3,7 @@
 **Splunk Enterprise · Windows Security Logs · SPL · Firewall Analysis · SOC Monitoring**
 
 ## Project overview
-
-This project showcases my hands-on Splunk course work across four areas: **Data Ingestion Pipeline**, **Custom Field Extractions**, **Statistical Analysis via SPL**, and **Dashboard Design & Visualization**.
-
-I worked with Windows Security telemetry and firewall-related events in Splunk, inspected network-relevant fields, practiced statistical queries, and built a firewall monitoring dashboard. My goal was to strengthen the practical workflow a SOC analyst uses to transform raw event data into useful security visibility.
-
-**Core workflow:** Ingest → Inspect fields → Search and aggregate → Visualize → Investigate.
-
+This project demonstrates hands-on Splunk experience in data ingestion, custom field extraction, SPL statistical analysis, and dashboard visualization to analyze Windows Security logs, monitor firewall activity, and strengthen SOC threat detection capabilities.
 ## 1. Data Ingestion Pipeline
 
 I explored indexed Windows Security events using Splunk search and examined the available event telemetry. The screenshot shows **118,078 events** returned within the selected time range. This represents the search result volume, not the number of security incidents.
