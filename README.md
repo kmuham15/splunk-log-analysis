@@ -19,8 +19,6 @@ This project demonstrates my hands-on SOC investigation skills using Splunk Ente
 
 ## 1. Data Ingestion Pipeline
 
-## Data Ingestion Pipeline
-
 I used **Splunk Enterprise** to ingest, process, and index Windows Security and firewall logs, transforming raw event data into searchable information for monitoring network activity.&#x20;
 
 <img width="1602" height="982" alt="Redacted Splunk Search Dashboard" src="https://github.com/user-attachments/assets/461a7359-a601-49d7-88d1-cf78ff26de41" />
