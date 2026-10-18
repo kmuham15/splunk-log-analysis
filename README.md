@@ -26,10 +26,6 @@ index=* sourcetype="WinEventLog:Security"
 | sort - count
 ```
 
-These are reproducible query examples, not fabricated investigation results. Queries may require changes based on your Splunk index, sourcetype, and field mappings.
-
-[Chapter documentation](chapters/03-statistical-analysis-via-spl.md) · [SPL query library](queries/)
-
 ## 4. Dashboard Design & Visualization
 
 I built a **Firewall Analysis** dashboard featuring a pie chart comparing allowed and blocked firewall activity, together with an event table displaying network fields and traffic direction. This brings event-level investigation and overall activity patterns into one view.
