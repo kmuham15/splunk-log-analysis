@@ -1,4 +1,4 @@
-# Splunk SOC Lab: From Raw Logs to Security Investigation
+# Splunk Security Monitoring & BOTSv3 Investigation
 
 ## Project overview
 This project demonstrates hands-on Splunk experience in data ingestion, custom field extraction, SPL statistical analysis, and dashboard visualization to analyze Windows Security logs, monitor firewall activity, and strengthen SOC threat detection capabilities.
