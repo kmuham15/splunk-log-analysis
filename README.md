@@ -3,6 +3,20 @@
 ## Project overview
 This project demonstrates my hands-on SOC investigation skills using Splunk Enterprise and the BOTSv3 security dataset. I leveraged SPL (Search Processing Language) to analyze Windows, firewall, endpoint, Microsoft 365, and authentication logs, identify suspicious activity, reconstruct attack timelines, and develop security dashboards to strengthen threat detection and incident response capabilities.
 
+## Tools and Technologies 
+
+Tools and Technologies
+Splunk Enterprise
+Splunk Search & Reporting
+Splunk SPL
+Windows Security Event Logs
+Windows Firewall Logs
+Microsoft 365 / Azure AD Sign-In Logs
+OneDrive and SharePoint Logs
+Boss of the SOC Version 3 (BOTSv3)
+Splunk Reports
+Splunk Dashboards
+
 ## 1. Data Ingestion Pipeline
 
 I explored indexed Windows Security events using Splunk search and examined the available event telemetry. The screenshot shows **118,078 events** returned within the selected time range. This represents the search result volume, not the number of security incidents.
