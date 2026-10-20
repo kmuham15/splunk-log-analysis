@@ -203,49 +203,52 @@ This revealed SharePoint and OneDrive activity.
 <img width="1094" height="702" alt="Screenshot 2026-10-18 224336" src="https://github.com/user-attachments/assets/82ca83fb-af78-433f-bea2-ee93def5bad4" />
 
 
-
-index=botsv3 earliest=0 "*Dropbox*" 
-```
-
-index=botsv3 sourcetype="ms:aad:signin" location.country="HK"
-
-
-## Key takeaways
-
-- Ingested and searchable logs are the foundation of useful security monitoring.
-- Source and destination information gives analysts essential network context.
-- Statistical queries help turn high-volume telemetry into understandable patterns.
-- Dashboards communicate trends efficiently while retaining event-level detail.
-- A high event count or unusual pattern is an investigative lead, **not automatic evidence of an attack**.
-
-## Repository contents
+One event contained information including:
 
 ```text
-Splunk-SOC-Security-Analytics/
-├── README.md
-├── chapters/
-│   ├── 01-data-ingestion-pipeline.md
-│   ├── 02-custom-field-extractions.md
-│   ├── 03-statistical-analysis-via-spl.md
-│   └── 04-dashboard-design-visualization.md
-├── queries/
-│   ├── 01-event-volume.spl
-│   ├── 02-firewall-event-fields.spl
-│   ├── 03-top-source-addresses.spl
-│   ├── 04-firewall-traffic-distribution.spl
-│   └── 05-hourly-activity.spl
-└── screenshots/
-    ├── 01-data-ingestion-pipeline.png
-    ├── 02-custom-field-extractions.png
-    └── 04-dashboard-design.png
+ClientIP: 104.207.83.63
+EventSource: SharePoint
+SourceFileName: morebeer.jpg
+SourceRelativeUrl: Documents/Birthday Pictures
+UserId: bgist@froth.ly
+Workload: OneDrive
 ```
+This connected the investigated IP address with activity involving Bruce Gist's Microsoft 365 files.
 
-## About the author
+I then searched across the BOTSv3 dataset for activity involving the IP address.
 
-I am a cybersecurity professional and project manager building hands-on skills in **SOC operations, SIEM monitoring, incident response, network security, and cloud security**. This project documents my technical growth through practical Splunk investigation and visualization exercises.
+```text
+index=botsv3 *"104.207.83.63"*
+| stats count by ClientIP, UserId, Workload
+```
+<img width="1103" height="410" alt="Screenshot 2026-10-19 230900" src="https://github.com/user-attachments/assets/bc815aed-814a-4ae3-a88d-5ff1ea3ff6b4" />
 
-## Privacy and evidence notes
+The results showed the same IP associated with both:
+```text
+bgist@froth.ly
+fyodor@froth.ly
+```
+The IP appeared across multiple Microsoft workloads, including:
+```text
+AzureActiveDirectory
+OneDrive
+SharePoint
+Exchange
+```
+This was an important correlation step because a single IP address connected multiple user identities and cloud services. 
 
-The included screenshots are based on my actual Splunk course environment. Visible computer-name and application-path areas have been blurred before publication. Loopback IP addresses such as `127.0.0.1` are retained because they do not identify a publicly reachable host. I recommend reviewing the final images before publishing additional environment details.
+## Key Takeaways & Skills Gained
 
-**Educational portfolio project.** No real-world compromise or confirmed malicious incident is claimed.
+This project strengthened my ability to conduct **SOC investigations using Splunk Enterprise**, progressing from broad log searches to focused threat analysis.
+
+I gained hands-on experience in:
+
+- **SPL Analysis:** Used `stats`, `table`, and `where` to filter, summarize, and analyze security events across multiple data sources.
+- **Endpoint & Network Security:** Investigated Windows Event IDs, suspicious processes, file activity, IP addresses, and firewall traffic.
+- **Cloud Security:** Analyzed Azure AD authentication, MFA, Microsoft 365, OneDrive, and SharePoint activity.
+- **Threat Hunting:** Correlated IP addresses, user accounts, processes, and email artifacts to investigate suspicious behavior.
+- **Security Visualization:** Reconstructed event timelines, created Splunk reports, and developed security dashboards.
+
+### Biggest Takeaway
+
+**One log entry rarely tells the full story.** By correlating evidence across multiple security sources, I learned how to connect suspicious activities, reconstruct attack timelines, and develop a clearer understanding of potential threats.
