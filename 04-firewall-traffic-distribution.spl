@@ -1,3 +1,0 @@
-index=* sourcetype="WinEventLog:Security" (EventCode=5156 OR EventCode=5157 OR EventCode=5158 OR EventCode=5159)
-| eval traffic_category=case(in(EventCode,5156,5158),"Allowed",in(EventCode,5157,5159),"Blocked")
-| stats count by traffic_category
